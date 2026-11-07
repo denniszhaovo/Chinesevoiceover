@@ -1,0 +1,284 @@
+:root {
+  --paper: #f6f1e8;
+  --ink: #1c1916;
+  --soft: #3a342c;
+  --muted: #4a453e;
+  --line: #ddd4c6;
+  --cinnabar: #8d2a2a;
+  --cinnabar-deep: #7a2020;
+  --night: #161311;
+  --cream: #f3eadc;
+  --focus: #f2c14e;
+  --space: clamp(1.25rem, 4vw, 2rem);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(900px 420px at 0% -10%, #fffaf3 0%, transparent 55%),
+    var(--paper);
+  color: var(--ink);
+  font-family: Inter, "Noto Sans", "Liberation Sans", "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  transform: translateY(-150%);
+  background: #fff;
+  color: var(--ink);
+  padding: 0.6rem 0.9rem;
+  z-index: 2;
+  border-radius: 0.4rem;
+}
+
+.skip:focus {
+  transform: none;
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.wrap {
+  width: min(40rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.site-header {
+  background: var(--night);
+  color: var(--cream);
+}
+
+.header-inner,
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4rem;
+}
+
+.wordmark,
+.site-footer p {
+  margin: 0;
+}
+
+.wordmark {
+  font-family: "Liberation Serif", "Iowan Old Style", Palatino, Georgia, serif;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+}
+
+.site-header a,
+.site-footer a {
+  color: var(--cream);
+}
+
+a {
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
+}
+
+main {
+  padding-block: clamp(2.5rem, 7vw, 4.5rem) clamp(2rem, 6vw, 3.5rem);
+}
+
+main:focus {
+  outline: none;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--cinnabar);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+.role {
+  font-family: "Liberation Serif", "Iowan Old Style", Palatino, Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(3rem, 10vw, 4.75rem);
+  line-height: 0.92;
+}
+
+.role {
+  margin: 0.7rem 0 0;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-style: italic;
+  color: var(--soft);
+}
+
+.lede {
+  margin: 1.25rem 0 0;
+  max-width: 38rem;
+  color: var(--soft);
+  font-size: 1.08rem;
+}
+
+.services {
+  margin-top: 2.5rem;
+}
+
+h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: service;
+}
+
+li {
+  counter-increment: service;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr;
+  column-gap: 0.85rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+}
+
+li:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+li::before {
+  content: counter(service, decimal-leading-zero);
+  padding-top: 0.15rem;
+  color: var(--cinnabar);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.28rem;
+  line-height: 1.25;
+}
+
+li p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.aside {
+  margin: 1.1rem 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.visit {
+  margin-top: 2.25rem;
+  padding: 1.4rem 1.35rem 1.5rem;
+  background: var(--night);
+  color: var(--cream);
+  border-radius: 1rem;
+}
+
+.visit h2,
+.visit p {
+  color: var(--cream);
+}
+
+.visit p {
+  margin: 0.35rem 0 1rem;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.55rem 1.1rem;
+  background: var(--cinnabar);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: var(--cinnabar-deep);
+  text-decoration: none;
+}
+
+.cta:focus-visible {
+  outline-color: #fff;
+}
+
+.site-footer {
+  background: var(--night);
+  color: var(--cream);
+  padding-block: 0.25rem;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .header-inner,
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-block: 0.85rem;
+    gap: 0.15rem;
+  }
+
+  .site-header nav a,
+  .site-footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media (min-width: 521px) {
+  .site-header nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+}

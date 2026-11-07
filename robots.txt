@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://denniszhaovo.github.io/Chinesevoiceover/sitemap.xml
